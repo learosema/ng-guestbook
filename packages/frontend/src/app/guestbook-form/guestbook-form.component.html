@@ -1,0 +1,57 @@
+<form [formGroup]="guestbookForm" class="form">
+  <div class="form__row">
+    <label class="form__label" for="name">
+      Name:
+    </label>
+    <input
+      class="form__text"
+      id="name"
+      type="text"
+      formControlName="name"
+      required
+    />
+  </div>
+
+  <div class="form__row">
+    <label class="form__label" for="email">
+      E-Mail:
+    </label>
+    <input
+      class="form__text"
+      id="email"
+      type="email"
+      formControlName="name"
+      required
+    />
+  </div>
+
+  <div class="form__row">
+    <label class="form__label" for="title">
+      Title:
+    </label>
+    <input
+      class="form__text"
+      id="title"
+      type="text"
+      formControlName="title"
+      required
+    />
+  </div>
+
+  <div class="form__row">
+    <label class="form__label" for="message">
+      Message
+    </label>
+    <textarea
+      class="form__text"
+      id="message"
+      type="text"
+      formControlName="message"
+      required
+    ></textarea>
+  </div>
+
+  <div class="form__row--buttons">
+    <button class="form__button" type="submit">Submit</button>
+  </div>
+</form>
