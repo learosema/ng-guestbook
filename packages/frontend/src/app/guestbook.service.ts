@@ -10,6 +10,10 @@ export interface GuestbookPost {
   date?: string;
 }
 
+export interface GuestbookPostResult {
+  ok: boolean;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -20,7 +24,7 @@ export class GuestbookService {
     return this.http.get<GuestbookPost[]>('/api/guestbook');
   }
 
-  writePost(post: GuestbookPost) {
-    this.http.post('/api/guestbook', post);
+  writePost(post: GuestbookPost): Observable<object> {
+    return this.http.post('/api/guestbook', post);
   }
 }

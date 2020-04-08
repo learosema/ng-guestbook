@@ -33,7 +33,8 @@ app.post("/api/guestbook", (req, res) => {
     message: req.body.message,
     date: new Date().toISOString(),
   };
-  fs.writeFileSync(DB_FILE, getPosts().concat(post), "utf8");
+  fs.writeFileSync(DB_FILE, JSON.stringify([post].concat(getPosts())), "utf8");
+  res.json({ ok: true });
 });
 
 app.listen(PORT, HOST, () =>

@@ -5,3 +5,32 @@ h1 {
 pre {
   color: #f7f;
 }
+
+.postings {
+  > *:nth-child(7n) {
+    --border-color: #f00;
+  }
+  > *:nth-child(7n + 1) {
+    --border-color: #f70;
+  }
+
+  > *:nth-child(7n + 2) {
+    --border-color: #ff0;
+  }
+
+  > *:nth-child(7n + 3) {
+    --border-color: #0f0;
+  }
+
+  > *:nth-child(7n + 4) {
+    --border-color: #0ff;
+  }
+
+  > *:nth-child(7n + 5) {
+    --border-color: #00f;
+  }
+
+  > *:nth-child(7n + 6) {
+    --border-color: #0ff;
+  }
+}

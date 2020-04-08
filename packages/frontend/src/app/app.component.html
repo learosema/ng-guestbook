@@ -1,4 +1,10 @@
 <h1>Welcome to Lea's Guestbook</h1>
-<app-guestbook-form></app-guestbook-form>
+<app-guestbook-form (submitted)="submitted($event)"></app-guestbook-form>
 
-<pre>{{ posts | async | json }}</pre>
+<div class="postings">
+  <app-posting
+    class="posting"
+    [post]="post"
+    *ngFor="let post of posts | async"
+  ></app-posting>
+</div>

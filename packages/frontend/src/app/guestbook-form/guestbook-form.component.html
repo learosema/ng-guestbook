@@ -1,4 +1,4 @@
-<form [formGroup]="guestbookForm" class="form">
+<form [formGroup]="guestbookForm" class="form" (ngSubmit)="onSubmit()">
   <div class="form__row">
     <label class="form__label" for="name">
       Name:
@@ -20,7 +20,7 @@
       class="form__text"
       id="email"
       type="email"
-      formControlName="name"
+      formControlName="email"
       required
     />
   </div>
@@ -40,7 +40,7 @@
 
   <div class="form__row">
     <label class="form__label" for="message">
-      Message
+      Message:
     </label>
     <textarea
       class="form__text"

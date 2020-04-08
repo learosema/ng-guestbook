@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { GuestbookService, GuestbookPost } from '../guestbook.service';
 
 @Component({
   selector: 'app-guestbook-form',
@@ -14,7 +15,14 @@ export class GuestbookFormComponent implements OnInit {
     message: new FormControl(''),
   });
 
+  @Output() submitted = new EventEmitter<GuestbookPost>();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSubmit() {
+    console.log(this.guestbookForm.value);
+    this.submitted.emit(this.guestbookForm.value as GuestbookPost);
+  }
 }
