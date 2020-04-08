@@ -1,0 +1,33 @@
+{
+  "name": "ngrx-guestbook",
+  "version": "1.0.0",
+  "description": "A 1999 style guestbook.",
+  "main": "index.js",
+  "scripts": {
+    "clean:modules": "rm -rf node_modules packages/**/node_modules",
+    "clean:build": "rm -rf packages/frontend/.cache packages/**/dist",
+    "bootstrap": "lerna bootstrap",
+    "backend": "lerna run start --scope @ngrx-guestbook/backend --stream",
+    "frontend": "lerna run start --scope @ngrx-guestbook/frontend --stream",
+    "storybook": "lerna run storybook --scope @talentbook/frontend --stream",
+    "lint": "lerna run lint --stream",
+    "lint:fix": "lerna run lint:fix --stream",
+    "pretest": "npm run lint -s",
+    "test": "lerna run test --stream",
+    "start": "concurrently npm:backend npm:frontend",
+    "build": "lerna run build"
+  },
+  "author": "Lea Rosema",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^4.2.3",
+    "lerna": "^3.20.2",
+    "prettier": "^2.0.4",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
