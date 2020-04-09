@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { GuestbookService, GuestbookPost } from './guestbook.service';
 import { Observable, Subscription } from 'rxjs';
 
@@ -20,7 +20,6 @@ export class AppComponent implements OnDestroy {
   submitted(post: GuestbookPost) {
     this.subscription.add(
       this.guestbook.writePost(post).subscribe((result) => {
-        console.log(result);
         this.posts = this.guestbook.getPosts();
       })
     );
