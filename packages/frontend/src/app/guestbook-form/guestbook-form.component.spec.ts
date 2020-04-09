@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { GuestbookFormComponent } from './guestbook-form.component';
 
@@ -9,6 +10,7 @@ describe('GuestbookFormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [GuestbookFormComponent],
+      imports: [ReactiveFormsModule],
     }).compileComponents();
   }));
 

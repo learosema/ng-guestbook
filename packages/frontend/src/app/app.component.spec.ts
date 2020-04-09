@@ -2,6 +2,9 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { GuestbookService } from './guestbook.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PostingComponent } from './posting/posting.component';
+import { GuestbookFormComponent } from './guestbook-form/guestbook-form.component';
 
 describe('AppComponent', () => {
   beforeEach(() =>
@@ -13,7 +16,8 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      imports: [],
+      declarations: [AppComponent, PostingComponent, GuestbookFormComponent],
     }).compileComponents();
   }));
 
