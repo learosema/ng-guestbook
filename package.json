@@ -20,6 +20,7 @@
   "author": "Lea Rosema",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^5.1.0",
     "husky": "^4.2.3",
     "lerna": "^3.20.2",
     "prettier": "^2.0.4",
