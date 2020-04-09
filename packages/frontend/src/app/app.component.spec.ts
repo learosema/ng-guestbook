@@ -1,14 +1,13 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { GuestbookService } from './guestbook.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [GuestbookService],
+      imports: [HttpClientModule],
+      providers: [GuestbookService, HttpClient],
     })
   );
 
