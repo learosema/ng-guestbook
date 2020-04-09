@@ -8,7 +8,6 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent implements OnDestroy {
-  title = 'frontend';
   posts: Observable<GuestbookPost[]> = this.guestbook.getPosts();
   private subscription: Subscription = new Subscription();
 

@@ -7,7 +7,13 @@ import { GuestbookPost } from '../guestbook.service';
   styleUrls: ['./posting.component.less'],
 })
 export class PostingComponent implements OnInit {
-  @Input() post: GuestbookPost;
+  @Input() post: GuestbookPost = {
+    name: '',
+    email: '',
+    title: '',
+    message: '',
+    date: '',
+  };
 
   constructor() {}
 
